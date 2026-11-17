@@ -1,0 +1,11 @@
+services:
+  - type: web
+    runtime: node
+    name: autocore-postgresql
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATABASE_URL
+        sync: false
